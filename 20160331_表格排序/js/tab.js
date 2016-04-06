@@ -1,7 +1,7 @@
 //想要操作谁就先获取谁，一下的获取方法都是表格独有的
 var oTab = document.getElementById("tab");
 var tHead = oTab.tHead;//表格独有的获取方法
-var oThs = tHead.rows[0].cells;//获取表头中的所有列（表头第一行中的所有列）
+var oThs = tHead.rows[0].ce  lls;//获取表头中的所有列（表头第一行中的所有列）
 var tBody = oTab.tBodies[0];//(一个表格中中可以有多个body，但是我们只有一个，也就是获取第一个)
 var oRows = tBody.rows;//(表格中body的所有行，因为需要对其排序)
 
