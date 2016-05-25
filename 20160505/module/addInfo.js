@@ -1,4 +1,4 @@
-var fs = require("fs");
+var fs = require("fs");//服务器文件读写
 function init(query, res) {
     //->query中存储了客户端触动给服务器端的信息内容{name:'',age:'',tel:'',address:''}
     //->创建我要增加的内容的结构
@@ -10,6 +10,7 @@ function init(query, res) {
     }
 
     //->首先把之前的内容获取到
+    //同步读取本地文件中的内容，并且获取到的内容是一个字符串
     var data = fs.readFileSync("./json/customerInfo.json", "utf8");
     data = JSON.parse(data);
 
@@ -30,6 +31,7 @@ function init(query, res) {
     res.writeHead(200, {'content-type': 'application/json; charset=UTF-8'});
     res.end(JSON.stringify({code: 0, desc: "添加成功!", data: obj}));
 }
+//暴露接口
 module.exports = {
     init: init
 };
